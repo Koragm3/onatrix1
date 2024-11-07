@@ -1,0 +1,182 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    Layout = "mainLayout.cshtml";
+
+    var backgroundImage = Model?.Value<IPublishedContent>("heroWomanImage")?.Url() ?? "";
+    var signatureImage = Model?.Value<IPublishedContent>("aboutUsSignaturePic")?.Url() ?? "";
+    var logoImg = Model?.Value<IPublishedContent>("logoImage")?.Url() ?? "";
+    var img1Image = Model?.Value<IPublishedContent>("img1")?.Url() ?? "";
+    var img2Image = Model?.Value<IPublishedContent>("img2")?.Url() ?? "";
+    var img3Image = Model?.Value<IPublishedContent>("img3")?.Url() ?? "";
+    var img4Image = Model?.Value<IPublishedContent>("img4")?.Url() ?? "";
+    var img5Image = Model?.Value<IPublishedContent>("img5")?.Url() ?? "";
+    var img6Image = Model?.Value<IPublishedContent>("img6")?.Url() ?? "";
+    var teamImage = Model?.Value<IPublishedContent>("teamPic")?.Url() ?? "";
+    var successImage = Model?.Value<IPublishedContent>("successPic")?.Url() ?? "";
+    var teamBackground = Model?.Value<IPublishedContent>("background")?.Url() ?? "";
+    var dotBackground = Model?.Value<IPublishedContent>("dotMap")?.Url() ?? "";
+    var logoImage1 = Model?.Value<IPublishedContent>("logo1")?.Url() ?? "";
+    var logoImage2 = Model?.Value<IPublishedContent>("logo2")?.Url() ?? "";
+    var logoImage3 = Model?.Value<IPublishedContent>("logo3")?.Url() ?? "";
+    var logoImage4 = Model?.Value<IPublishedContent>("logo4")?.Url() ?? "";
+    var logoImage5 = Model?.Value<IPublishedContent>("logo5")?.Url() ?? "";
+    var logoImage6 = Model?.Value<IPublishedContent>("logo6")?.Url() ?? "";
+    var buttonLink = Model.Value<Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>("herobuttonLink");
+    var buttonLinkUrl = buttonLink?.Url();
+
+}
+
+<section class="first_section">
+    <div class="background" style="background-image:url(@backgroundImage); background-size: cover; background-position: 60%"></div>
+
+    <div class="container">
+        <div class="layer-1">
+            <h1>@Model.Value("heroHeadLine")</h1>
+            <p>@Model.Value("herotext")</p>
+            <a href="@buttonLinkUrl" class="btn btn-primary">@Model.Value("herobuttonText")</a>
+        </div> 
+    </div>
+            
+
+    
+</section>
+
+
+<section class="second_section">
+    <div class="container">
+        <div class="signature">
+         <h6>@Model.Value("aboutUsMiniHeading")</h6>
+         <h2>@Model.Value("aboutUsHeadLine")</h2>
+         <blockquote class="qoute">@Model.Value("aboutUsQuote")</blockquote>
+         <p>@Model.Value("aboutUsText")</p>
+         <img class="signature_img" src="@signatureImage" alt="@Model.Value("aboutUsSignaturePic")"></img>
+
+         <p>@Model.Value("aboutUsSignature")</p>
+
+
+        </div>
+        <div class="container">
+            <div class="green">
+                <h3>@Model.Value("formHeading")</h3>
+            </div>
+            <div class="white">
+                <p>@Model.Value("formText")</p>
+                <form class="simple-form">
+                    <div class="form-group">
+                        <label for="name"></label>
+                        <input type="text" id="name" name="name" placeholder="Name"  />
+                    </div>
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input type="email" id="email" name="email" placeholder="Email address"  />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"></label>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone"  />
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary">@Model.Value("formButtonText")</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="third_section">
+    <div class="container">
+        <div class="top">
+            <h6 class="top1">@Model.Value("ourServicesMiniHeading")</h6>
+            <h2 class="top2">@Model.Value("ourServicesHeadline")</h2>
+        </div>
+
+        <div class="grid">
+            <div class="container">
+                    <div class="services">
+                        <div class="rub">@Model.Value("service1Headline")</div>
+                        <img src="@img1Image" alt="img1"/>
+                        <p>@Model.Value("service1Text")</p>
+                    </div>
+                    <div class="services">
+                        <div class="rub">@Model.Value("service2Headline")</div>
+                        <img src="@img2Image" alt="img2"/>
+                        <p>@Model.Value("service2Text")</p>
+                    </div>
+                    <div class="services">
+                        <div class="rub">@Model.Value("service3Headline")</div>
+                        <img src="@img3Image" alt="img3"/>
+                        <p>@Model.Value("service3Text")</p>
+                    </div>
+                    <div class="services">
+                        <div class="rub">@Model.Value("service4Headline")</div>
+                        <img src="@img4Image" alt="img4"/>
+                        <p>@Model.Value("service4Text")</p>
+                    </div>
+                    <div class="services">
+                        <div class="rub">@Model.Value("service5Headline")</div>
+                        <img src="@img5Image" alt="img5"/>
+                        <p>@Model.Value("service5Text")</p>
+                    </div>
+                    <div class="services">
+                        <div class="rub">@Model.Value("service6Headline")</div>
+                        <img src="@img6Image" alt="img6"/>
+                        <p>@Model.Value("service6Text")</p>
+                    </div>
+            </div>
+        </div>
+    </div>  
+</section>
+<section class="forth_section">
+    <div class="trusted">
+        <div class="container">
+            <h2>@Model.Value("trustedHeadline")</h2>
+            <div class="golden">@Model.Value("trustedClients")</div>
+            <p>@Model.Value("trustedText")</p>
+            <a href="#" class="btn btn-primary">@Model.Value("trustedButtonText")</a>
+            <div class="background" style="background-image:url(@teamBackground); background-size: cover; background-position: 60%"></div>
+
+        </div>
+    </div>
+    <div class="teamImage">
+        <img src="@teamImage" alt="teamPic"/>
+    </div>
+</section>
+<section class="fifth_section">
+    <div class="success_heading">
+        <P>@Model.Value("successHeading")</P>
+        <h2>@Model.Value("successHeadline")</h2>
+    </div>
+    <div class="container">
+        <div class="background" style="background-image:url(@teamBackground); background-size: cover; background-position: 60%"></div>
+
+        <div class="success_group">
+            <div class="numbers">@Model.Value("group1Num")</div>
+            <p>@Model.Value("group1Text")</p>
+        </div>
+        <div class="success_group">
+            <div class="numbers">@Model.Value("group2Num")</div>
+            <p>@Model.Value("group2Text")</p>
+        </div>
+        <div class="success_group">
+            <div class="numbers">@Model.Value("group3Num")</div>
+            <p>@Model.Value("group3Text")</p>
+        </div>
+    </div>
+    <div class="success_img">
+        <img src="@successImage" alt="successPic"/>
+    </div>
+</section>
+<section class="logo">
+    <div class="container">
+        <div class="logos"><img src="@logoImage1" alt=""/></div>
+        <div class="logos"><img src="@logoImage2" alt=""/></div>
+        <div class="logos"><img src="@logoImage3" alt=""/></div>
+        <div class="logos"><img src="@logoImage4" alt=""/></div>
+        <div class="logos"><img src="@logoImage5" alt=""/></div>
+        <div class="logos"><img src="@logoImage6" alt=""/></div>
+    </div>
+</section>

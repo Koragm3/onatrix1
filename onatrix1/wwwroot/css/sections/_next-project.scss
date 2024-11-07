@@ -1,0 +1,86 @@
+﻿.next-project {
+    margin-top: 5rem;
+
+    > .container {
+        position: relative;
+        padding-top: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 600px;
+        gap: 10rem;
+
+        > .images {
+            display: block;
+            flex: 1;
+
+            > .image-human {
+                position: absolute;
+                bottom: 0;
+                left: 100px;
+                z-index: 3;
+                width: 400px;
+                height: auto;
+
+                > img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            > .image-background {
+                position: absolute;
+                bottom: 0;
+                left: 100px;
+                z-index: 2;
+                width: 500px;
+                height: auto;
+
+                > img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            > .image-dot {
+                position: absolute;
+                bottom: 0;
+                left: 360px;
+                z-index: 1;
+                width: 180px;
+                height: auto;
+
+                > img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        > .text {
+            flex: 1;
+            margin-top: 10rem;
+            margin-bottom: 10rem;
+
+            > h2 {
+                margin-right: 11rem;
+                font-size: 2.2rem;
+            }
+
+            > h5 {
+                font-size: 0.7rem;
+
+                > i {
+                    color: var(--color-secondary);
+                    padding-right: 0.5rem;
+                }
+            }
+
+            > p {
+                
+                margin-left: 1rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

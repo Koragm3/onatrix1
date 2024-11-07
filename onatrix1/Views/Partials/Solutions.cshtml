@@ -1,0 +1,88 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+
+@{
+    var rootContents   = UmbracoHelper.ContentAtRoot();
+    var Model          = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "Solutions") ?? null;
+    
+    var solutionImage1 = Model?.Value<IPublishedContent>("img11")?.Url() ?? "";
+    var solutionImage2 = Model?.Value<IPublishedContent>("img2")?.Url() ?? "";
+    var solutionImage3 = Model?.Value<IPublishedContent>("img3")?.Url() ?? "";
+    var solutionImage4 = Model?.Value<IPublishedContent>("Img4")?.Url() ?? "";
+    var solutionImage5 = Model?.Value<IPublishedContent>("Img5")?.Url() ?? "";
+    var solutionImage6 = Model?.Value<IPublishedContent>("Img6")?.Url() ?? "";
+ 
+}
+
+
+
+
+<section id="our-services" class="our-services">
+    <div class="bg-gray">
+        <div class="container">
+            <h6>@Model?.Value("solutionsHeadline")</h6>
+            <h2>@Model?.Value("solutionsTitle1")</h2>
+            <h2>@Model?.Value("solutionsTitle2")</h2>
+            
+            <div class="solution">
+                <a href="@Model?.Value("solutionLink1")">
+                    <div class="solution-item">
+                        <h5>@Model?.Value("solutionHeadline1")</h5>
+                        <div class="image">
+                            <img src="@solutionImage1" alt="@Model?.Value("img11")">
+                        </div>
+                        <p>@Model?.Value("solutionText1")</p>
+                    </div>
+                </a>
+                <a href="@Model?.Value("solutionLink2")">
+                    <div class="solution-item">
+                        <h5>@Model?.Value("solutionHeadline2")</h5>
+                        <div class="image">
+                            <img src="@solutionImage2" alt="@Model?.Value("solutionImage2")">
+                        </div>
+                        <p>@Model?.Value("solutionText2")</p>
+                    </div>
+                </a>
+                <a href="@Model?.Value("solutionLink3")">
+                    <div class="solution-item">
+                        <h5>@Model?.Value("solutionHeadline3")</h5>
+                        <div class="image">
+                            <img src="@solutionImage3" alt="@Model?.Value("solutionImage3")">
+                        </div>
+                        <p>@Model?.Value("solutionText3")</p>
+                    </div>
+                </a>
+                <a href="@Model?.Value("solutionLink4")">
+                    <div class="solution-item">
+                        <h5>@Model?.Value("solutionHeadline4")</h5>
+                        <div class="image">
+                            <img src="@solutionImage4" alt="@Model?.Value("solutionImage4")">
+                        </div>
+                        <p>@Model?.Value("solutionText4")</p>
+                    </div>
+                </a>
+                <a href="@Model?.Value("solutionLink5")">
+                    <div class="solution-item">
+                        <h5>@Model?.Value("solutionHeadline5")</h5>
+                        <div class="image">
+                            <img src="@solutionImage5" alt="@Model?.Value("solutionImage5")">
+                        </div>
+                        <p>@Model?.Value("solutionText5")</p>
+                    </div>
+                </a>
+                <a href="@Model?.Value("solutionLink6")">
+                    <div class="solution-item">
+                        <h5>@Model?.Value("solutionHeadline6")</h5>
+                        <div class="image">
+                            <img src="@solutionImage6" alt="@Model?.Value("solutionImage6")">
+                        </div>
+                        <p>@Model?.Value("solutionText6")</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,157 @@
+﻿
+//call-box
+.call-box {
+    position: absolute;
+    top: -12rem;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px 10px rgba(163, 163, 163, 0.25);
+    width: 500px;
+
+    .box-header {
+        display: flex;
+        align-items: center;
+        padding: 1.5rem 1.5rem;
+        background-color: var(--color-primary);
+
+        > h3 {
+            color: var(--color-accent);
+            font-size: 25pt;
+        }
+    }
+
+    p {
+        font-size: 10pt;
+        font-weight: 500;
+        font-style: italic;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 2rem;
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 20px;
+            border: 1.5px solid var(--color-border-gray);
+            border-radius: 4px;
+            font-size: 11pt;
+            font-style: italic;
+            transition: border-color 0.3s;
+
+            &:focus,
+            &:hover {
+                border-color: var(--color-border-dark);
+            }
+
+            &::placeholder {
+                color: var(--color-border-gray);
+            }
+        }
+
+        .select-wrapper {
+            position: relative;
+            width: 100%;
+
+            .select {
+                position: relative;
+                border: 1.5px solid var(--color-border-gray);
+                border-radius: 4px;
+                padding: 0.3rem 0;
+                cursor: pointer;
+                transition: border-color 0.3s;
+
+                &:hover {
+                    border-color: var(--color-border-dark);
+                }
+
+                .select_trigger {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 22px;
+                    font-size: 9pt;
+                    font-weight: 300;
+                    height: 40px;
+                    line-height: 40px;
+                    color: #3b3b3b;
+
+                    span {
+                        font-weight: 400;
+                        font-size: 9pt;
+                    }
+
+                    .arrow {
+                        width: 15px;
+                        height: 15px;
+                        transform: rotate(180deg);
+
+                        &::before,
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 3px;
+                            width: 0.12rem;
+                            height: 9px;
+                            background-color: var(--clr-green);
+                            transition: all 0.2s;
+                        }
+
+                        &::before {
+                            left: 5px;
+                            transform: rotate(45deg);
+                        }
+
+                        &::after {
+                            right: 2px;
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+
+                .options {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background: var(--color-light);
+                    border: 1.5px solid var(--color-border-gray);
+                    border-top: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                    z-index: 2;
+                    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+                    .option {
+                        padding: 0 22px;
+                        font-size: 9pt;
+                        font-weight: 300;
+                        color: var(--color-default);
+                        line-height: 40px;
+                        opacity: 0;
+                        transform: translateY(-10px);
+                        transition: all 0.2s;
+
+                        &:hover {
+                            background-color: var(--color-border-gray);
+                        }
+                    }
+
+                    .option.selected {
+                        background-color: var(--clr-green);
+                        color: var(--color-light);
+                    }
+                }
+
+              
+                
+            }
+        }
+    }
+}

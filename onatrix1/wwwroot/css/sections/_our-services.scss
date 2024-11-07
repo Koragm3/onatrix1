@@ -1,0 +1,68 @@
+﻿
+#our-services {
+
+
+    .bg-gray {
+        padding-top: 3rem;
+        padding-bottom: 6rem;
+
+        .container {
+
+            h6 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 3rem;
+            }
+
+            h2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+
+            .solution {
+                display: grid;
+                gap: 20px;
+                grid-template-columns: repeat(3, 1fr);
+                margin-top: 3rem;
+
+                a {
+                    text-decoration: none;
+                    color: var(--color-primary);
+                    background-color: var(--color-light);
+                    border: 1px solid var(--color-border-gray);
+
+                    .solution-item {
+                        h5 {
+                            font-size: 1.4rem;
+                            padding: 1.6rem;
+                            margin: 0.5rem;
+                            font-weight:650;
+                        }
+
+                        .image {
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                transition: transform 0.3s ease, filter 0.3s ease;
+
+                                &:hover {
+                                    transform: scale(0.95);
+                                    filter: brightness(0.5);
+                                }
+                            }
+                        }
+
+
+                        p {
+                            padding: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

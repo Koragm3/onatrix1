@@ -1,0 +1,29 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settings") ?? null;
+
+    var weHelpYouImage1 = Model?.Value<IPublishedContent>("weHelpYouImage")?.Url() ?? "";
+    var weHelpYouHeadline = settings?.Value<string>("weHelpYouHeadline") ?? "";
+    var weHelpYouText = settings?.Value<string>("weHelpYouText") ?? "";
+}
+
+
+
+
+<div class="we-help-you-box">
+    <h4 class="we-help-you-Headline">@weHelpYouHeadline</h4>
+    <p class="we-help-you-p">@weHelpYouText</p>
+    <div class="we-help-you">
+        <input type="email" placeholder="E-mail address">
+        <span class="we-help-icon">
+            <i class="fas fa-envelope"></i> 
+        </span>
+    </div>
+    <div class="we-help-you-image">
+        <img src="@weHelpYouImage1" />
+    </div>
+</div>

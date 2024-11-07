@@ -1,0 +1,40 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout                   = "mainLayout.cshtml";
+    ViewBag.Title            = Model?.Value("pageTitle") ?? null;
+
+    var servicesBackgroundImage = Model?.Value<IPublishedContent>("servicesBackgroundImage")?.Url() ?? "";
+}
+
+
+
+<section class="banner bg-gray">
+    <div class="banner-background">
+        <img src="@servicesBackgroundImage" alt="Backround image">
+        <div class="content">
+            <h2>@Model?.Value("ServicesHeadline")</h2>
+            <div class="links">
+                <a class="home" href="@Model?.Value("ServicesLink1")">@Model?.Value("ServicesLinkText1")</a>
+                    <div class="chevron"><i class="fa-regular fa-chevron-right"></i></div>
+                <a class="activ" href="@Model?.Value("ServicesLink2")">@Model?.Value("ServicesLinkText2")</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<div class="services-our-services">
+    @await Html.PartialAsync("partials/Solutions.cshtml")
+</div>
+
+
+
+@await Html.PartialAsync("partials/pagnaition.cshtml")
+
+
+
+
+@await Html.PartialAsync("partials/next.cshtml")

@@ -1,0 +1,56 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+
+@{
+    var rootContents      = UmbracoHelper.ContentAtRoot();
+    var settings          = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settings") ?? null;
+    var npImageHuman      = settings?.Value<IPublishedContent>("npImageHuman")?.Url() ?? "";
+    var npImageBackground = settings?.Value<IPublishedContent>("npImageBackground")?.Url() ?? "";
+    var npImageDot        = settings?.Value<IPublishedContent>("npImageDot")?.Url() ?? "";
+    var npTextHeadline    = settings?.Value<string>("npTextHeadline") ?? "";
+    var npTextLocation    = settings?.Value<string>("npTextLocation") ?? "";
+    var npTextPhone       = settings?.Value<string>("npTextPhone") ?? "";
+    
+    var npPLocation       = settings?.Value<string>("npPLocation") ?? "";
+    var npPPhone          = settings?.Value<string>("npPPhone") ?? "";
+    var npPEmail          = settings?.Value<string>("npPEmail") ?? "";
+}
+
+
+
+
+
+<!-----------next-project---------->
+<section class="next-project bg-gray">
+    <div class="container">
+
+        <div class="images">
+            <div class="image-human">
+                
+                <img src="@npImageHuman" alt="">
+            </div>
+
+            <div class="image-background">
+                <img src="@npImageBackground" alt="">
+            </div>
+
+            <div class="image-dot">
+                <img src="@npImageDot" alt="">
+            </div>
+        </div>
+
+        <div class="text">
+            <h2>@npTextHeadline</h2>
+
+            <h5><i class="fas fa-map-marker-alt"></i>@Model.Value("npTextLocation")</h5>
+            <p>@Model.Value("npPLocation")</p>
+            
+            <h5><i class="fas fa-phone"></i>@Model.Value("npTextPhone")</h5>
+            <p>@npPPhone</p>
+            
+            <h5><i class="fas fa-envelope"></i>@Model.Value("npTextEmail")</h5>
+            <p>@npPEmail</p>
+        </div>
+    </div>
+</section>

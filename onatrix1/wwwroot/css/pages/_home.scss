@@ -1,0 +1,319 @@
+﻿
+
+.hero-section {
+    .hero-background {
+        display: block;
+        height: 35rem;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .hero-content {
+            width: 50%;
+
+            .headline {
+                font-weight: 700;
+                margin-top: 7rem;
+                line-height: 110%;
+            }
+
+            .ingress {
+                font-size: large;
+                margin-top: 1.5rem;
+            }
+
+            div {
+                .btn {
+                    margin-bottom: 5rem;
+                    margin-top:    1rem;
+                    font-weight:    700;
+                }
+            }
+        }
+    }
+}
+
+
+
+.about-us {
+    position: relative;
+    margin: 7rem 7rem;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .content {
+            width: 50%;
+
+            .signature-image {
+                margin: 1rem 0;
+            }
+
+            .quote {
+                font-size: 15pt;
+                font-style: italic;
+                font-weight: 300;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+
+
+
+.clients {
+    margin-top: 8rem;
+
+    > .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+
+        > .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 50%;
+            position: relative; 
+            z-index: 1; 
+            overflow: hidden;
+
+            > h2 {
+                margin: 0;
+            }
+
+            > .clients-h2 {
+                color: var(--color-secondary);
+            }
+
+            > p {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .clients-image-1 {
+            width: 100%;
+            height: auto;
+            margin-top: -6rem;
+            margin-left: 33rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0; 
+            opacity: 0.35;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+
+           > img {
+                width: 77%;
+                transition: transform 0.5s ease, opacity 0.5s ease;
+            }
+
+            &:hover {
+                opacity: 1;
+
+               > img {
+                    transform: scale(0.9);
+                }
+            }
+        }
+
+        .clients-image-2 {
+            width: 100%;
+            height: auto;
+            margin-top: 5rem;
+            z-index: 1;
+
+           > img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+
+
+
+.success {
+    .bg-primary {
+        padding-top: 6rem;
+        height: 60rem;
+        position: relative;
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+
+            h6, h2 {
+                position: relative;
+                z-index: 2;
+                text-align: center;
+            }
+
+            .success-stories {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 4rem;
+                z-index: 2;
+
+                .success-story {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    flex: 1;
+
+
+                    h1 {
+                        color: var(--color-secondary);
+                        margin: 0;
+                        font-size: 5rem;
+                        font-weight: 600;
+                    }
+
+                    h5 {
+                        text-align: center;
+                        font-weight: 400;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            .success-image1 {
+                display: block;
+                width: 100%;
+                height: auto;
+                position: absolute;
+                top: 1rem;
+                z-index: 1;
+
+               > img {
+                    width: 100%;
+                  
+                }
+            }
+
+            .success-image2 {
+                display: block;
+                width: 100%;
+                height: auto;
+                padding: 4rem;
+                position: relative;
+                top: 6rem;
+                right: 0;
+                z-index: 2;
+
+               > img {
+                    width: 100%;
+                    
+                }
+            }
+        }
+    }
+}
+
+
+
+
+.our-projects {
+    margin-top: 19rem;
+
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 3rem;
+
+        .project {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+
+            .our-projects-image {
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .bg-primary,
+            .bg-primary-active {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                padding-left: 1.8rem;
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            &:hover .bg-primary,
+            &:hover .bg-primary-active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .bg-primary {
+                background-color: rgba(0, 0, 0, 0.5);
+                height: 5.5rem;
+
+                h5 {
+                    margin-top: 1.2rem;
+                    font-weight: 400;
+                }
+
+                p {
+                    margin-top: -0.3rem;
+                }
+            }
+
+            .bg-primary-active {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                background-color: var(--color-primary);
+                padding: 1rem;
+
+                .info {
+                    h5 {
+                        margin-top: 1.8rem;
+                        margin-bottom: 0.6rem;
+                        font-weight: 600;
+                        color: var(--color-secondary);
+                    }
+
+                    p {
+                        margin-top: -0.4rem;
+                        color: var(--color-light);
+                    }
+                }
+
+                .chevron {
+                    color: var(--color-light);
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}
