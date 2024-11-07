@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Contact us</summary>
-	[PublishedModel("contactUs")]
-	public partial class ContactUs : PublishedContentModel
+	/// <summary>Services</summary>
+	[PublishedModel("services")]
+	public partial class Services : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		public new const string ModelTypeAlias = "contactUs";
+		public new const string ModelTypeAlias = "services";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -34,68 +34,20 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<ContactUs, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Services, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public ContactUs(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public Services(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
 		}
 
 		// properties
-
-		///<summary>
-		/// Contact - Background Image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("contactBackgroundImage")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ContactBackgroundImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "contactBackgroundImage");
-
-		///<summary>
-		/// Contact - Headline
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("contactHeadline")]
-		public virtual string ContactHeadline => this.Value<string>(_publishedValueFallback, "contactHeadline");
-
-		///<summary>
-		/// Contact - Link 1
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("contactLink1")]
-		public virtual string ContactLink1 => this.Value<string>(_publishedValueFallback, "contactLink1");
-
-		///<summary>
-		/// Contact - Link 2
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("contactLink2")]
-		public virtual string ContactLink2 => this.Value<string>(_publishedValueFallback, "contactLink2");
-
-		///<summary>
-		/// Contact - Link Text 1
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("contactLinkText1")]
-		public virtual string ContactLinkText1 => this.Value<string>(_publishedValueFallback, "contactLinkText1");
-
-		///<summary>
-		/// Contact - Link Text 2
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("contactLinkText2")]
-		public virtual string ContactLinkText2 => this.Value<string>(_publishedValueFallback, "contactLinkText2");
 
 		///<summary>
 		/// Page Title
@@ -106,27 +58,51 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string PageTitle => this.Value<string>(_publishedValueFallback, "pageTitle");
 
 		///<summary>
-		/// Request Text - Heading
+		/// Services- Background Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("requestTextHeading")]
-		public virtual string RequestTextHeading => this.Value<string>(_publishedValueFallback, "requestTextHeading");
+		[ImplementPropertyType("servicesBackgroundImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ServicesBackgroundImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "servicesBackgroundImage");
 
 		///<summary>
-		/// Request Text - Headline
+		/// Services- Headline
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("requestTextHeadline")]
-		public virtual string RequestTextHeadline => this.Value<string>(_publishedValueFallback, "requestTextHeadline");
+		[ImplementPropertyType("servicesHeadline")]
+		public virtual string ServicesHeadline => this.Value<string>(_publishedValueFallback, "servicesHeadline");
 
 		///<summary>
-		/// Request Text - Text
+		/// Services - Link 1
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("requestTextText")]
-		public virtual string RequestTextText => this.Value<string>(_publishedValueFallback, "requestTextText");
+		[ImplementPropertyType("servicesLink1")]
+		public virtual string ServicesLink1 => this.Value<string>(_publishedValueFallback, "servicesLink1");
+
+		///<summary>
+		/// Services- Link 2
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("servicesLink2")]
+		public virtual string ServicesLink2 => this.Value<string>(_publishedValueFallback, "servicesLink2");
+
+		///<summary>
+		/// Services- Link Text 1
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("servicesLinkText1")]
+		public virtual string ServicesLinkText1 => this.Value<string>(_publishedValueFallback, "servicesLinkText1");
+
+		///<summary>
+		/// Services- Link Text 2
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("servicesLinkText2")]
+		public virtual string ServicesLinkText2 => this.Value<string>(_publishedValueFallback, "servicesLinkText2");
 	}
 }
